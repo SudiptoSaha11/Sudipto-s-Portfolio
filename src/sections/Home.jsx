@@ -115,7 +115,7 @@ export default function PortfolioLoader() {
       {/* Background Video Layer - Always present */}
       <div 
         ref={videoContainerRef}
-        className="fixed inset-0 z-40 mb-[75px]"
+        className="fixed inset-0 z-40"
         style={{ pointerEvents: showHero ? 'none' : 'auto' }}
       >
         <video

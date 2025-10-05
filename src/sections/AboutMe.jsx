@@ -49,7 +49,7 @@ export default function AboutMe({ onClose }) {
           {/* Contact Links */}
           <div className="flex flex-wrap gap-4 mb-12 animate-slide-in-up">
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/SudiptoSaha11" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-white"
@@ -59,7 +59,7 @@ export default function AboutMe({ onClose }) {
               <ExternalLink size={16} />
             </a>
             <a 
-              href="https://linkedin.com/in/yourusername" 
+              href="https://www.linkedin.com/in/sudipto-saha-je" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-white"

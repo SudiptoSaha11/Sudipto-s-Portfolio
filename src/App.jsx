@@ -4,13 +4,16 @@ import AboutMe from "./sections/AboutMe";
 import Projects from "./sections/MyProjects";
 import SkillsEducation from "./sections/SkillsandEducation";
 import Home from "./sections/Home";
+import GetStarted from "./sections/GetStarted";
 
 function App() {
   return (
     <Router>
       <Routes>
         {/* Home page */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<GetStarted />} />
+
+        <Route path="/home" element={<Home />} />
 
         <Route path="/hero" element={<Hero />} />
 

@@ -71,7 +71,7 @@ const GetStarted = () => {
               style={{
                 fontFamily: "'Black Ops One', system-ui, -apple-system, sans-serif",
                 letterSpacing: '-0.02em',
-                fontSize: '8rem',
+                fontSize: '6rem',
               }}
             >
               SUDIPTO SAHA
@@ -85,7 +85,7 @@ const GetStarted = () => {
             }`}
           >
             <h2
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-300 mb-8"
+              className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-300 mb-8"
               style={{
                 fontFamily: 'system-ui, -apple-system, sans-serif',
                 letterSpacing: '-0.01em',
@@ -114,7 +114,7 @@ const GetStarted = () => {
           >
             <button
               onClick={handleGetStarted}
-              className="group relative px-12 py-5 bg-white text-black text-xl md:text-2xl font-bold rounded-none overflow-hidden transition-all duration-500 hover:cursor-pointer hover:bg-gray-200 hover:scale-105 hover:shadow-2xl"
+              className="group relative px-8 py-5 bg-white text-black text-xl md:text-2xl font-bold rounded-none overflow-hidden transition-all duration-500 hover:cursor-pointer hover:bg-gray-200 hover:scale-105 hover:shadow-2xl"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
               <span className="relative z-10 flex items-center space-x-3">
@@ -139,7 +139,8 @@ const GetStarted = () => {
               <img
                 src={PortfolioImg}
                 alt="Sudipto Saha"
-                className="w-full h-full object-cover"
+                draggable="false"
+                className="w-full h-auto max-h-[100vh] object-contain object-top"
               />
             </div>
           </div>

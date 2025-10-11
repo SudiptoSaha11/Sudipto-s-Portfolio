@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ChevronRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
+ import PortfolioImg from '/images/portfolio png sud.png'
 
 const GetStarted = () => {
   const navigate = useNavigate()
@@ -136,7 +137,7 @@ const GetStarted = () => {
           >
             <div className="relative w-full max-w-3xl aspect-auto">
               <img
-                src="images/portfolio png sud.png"
+                src={PortfolioImg}
                 alt="Sudipto Saha"
                 className="w-full h-full object-cover"
               />

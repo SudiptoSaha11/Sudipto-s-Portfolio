@@ -34,8 +34,8 @@ export default function Projects({ onClose }) {
       description: "Real-time weather application with location-based forecasts and interactive maps.",
       tech: ["Javascript", "OpenWeather API", "HTML", "CSS"],
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
-      github: "https://github.com/yourusername/project4",
-      live: "https://project4.com",
+      github: "https://github.com/SudiptoSaha11/Weather-Forecast",
+      live: "https://ifweather.netlify.app",
       featured: false
     }
     // {

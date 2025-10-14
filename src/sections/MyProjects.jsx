@@ -3,19 +3,19 @@ import { Code2, ExternalLink, Github, X, Layers, Sparkles, Rocket } from "lucide
 export default function Projects({ onClose }) {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured online store with payment integration, inventory management, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-      github: "https://github.com/yourusername/project1",
-      live: "https://project1.com",
+      title: "TicketFlix",
+      description: "A full-featured movie and event ticket booking website with user authentication, payment integration and many more.",
+      tech: ["React", "Node.js", "MongoDB", "Stripe", "Express"],
+      image: "/images/ticketflix superman.jpeg",
+      github: "https://github.com/SudiptoSaha11/TicketFlix-Frontend",
+      live: "https://ticketflix-official.netlify.app/",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, team chat, and analytics.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io", "Tailwind"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      title: "Food Delivery App",
+      description: "A scalable food delivery platform with real-time order tracking, restaurant management and many more",
+      tech: ["React", "JavaScript", "MongoDB", "Socket.io", "Tailwind"],
+      image: "images/food express.jpg",
       github: "https://github.com/yourusername/project2",
       live: "https://project2.com",
       featured: true
@@ -32,30 +32,30 @@ export default function Projects({ onClose }) {
     {
       title: "Weather Forecast App",
       description: "Real-time weather application with location-based forecasts and interactive maps.",
-      tech: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      tech: ["Javascript", "OpenWeather API", "HTML", "CSS"],
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
       github: "https://github.com/yourusername/project4",
       live: "https://project4.com",
       featured: false
-    },
-    {
-      title: "Portfolio CMS",
-      description: "Content management system specifically designed for creative professionals and portfolios.",
-      tech: ["Next.js", "Sanity.io", "Vercel", "Framer Motion"],
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-      github: "https://github.com/yourusername/project5",
-      live: "https://project5.com",
-      featured: false
-    },
-    {
-      title: "Fitness Tracker",
-      description: "Mobile-first fitness tracking app with workout plans, nutrition logging, and progress charts.",
-      tech: ["React Native", "Firebase", "Redux", "Chart.js"],
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
-      github: "https://github.com/yourusername/project6",
-      live: "https://project6.com",
-      featured: false
     }
+    // {
+    //   title: "Portfolio CMS",
+    //   description: "Content management system specifically designed for creative professionals and portfolios.",
+    //   tech: ["Next.js", "Sanity.io", "Vercel", "Framer Motion"],
+    //   image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+    //   github: "https://github.com/yourusername/project5",
+    //   live: "https://project5.com",
+    //   featured: false
+    // },
+    // {
+    //   title: "Fitness Tracker",
+    //   description: "Mobile-first fitness tracking app with workout plans, nutrition logging, and progress charts.",
+    //   tech: ["React Native", "Firebase", "Redux", "Chart.js"],
+    //   image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+    //   github: "https://github.com/yourusername/project6",
+    //   live: "https://project6.com",
+    //   featured: false
+    // }
   ];
 
   const featuredProjects = projects.filter(p => p.featured);

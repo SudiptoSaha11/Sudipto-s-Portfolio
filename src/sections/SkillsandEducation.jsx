@@ -2,16 +2,16 @@ import { GraduationCap, BookOpen, Award, Zap, X } from "lucide-react";
 
 export default function SkillsEducation({ onClose }) {
   const education = [
-    { year: "2016 - 2020", degree: "B.Tech in Computer Science", institution: "ABC University" },
-    { year: "2014 - 2016", degree: "Higher Secondary (Science)", institution: "XYZ School" },
-    { year: "2012 - 2014", degree: "Secondary Education", institution: "High School No.1" },
+    { year: "2023-2025", degree: "Masters in Computer Application", institution: "Guru Nanak Institite Of Technology" },
+    { year: "2019 - 2023", degree: "B.Tech in Electrical Engineering", institution: "Narula Institiute Of Technology" },
+    { year: "2018-2019", degree: "Higher Secondary", institution: "Bholananda National Vidyalaya" },
   ];
 
   const skills = [
-    { category: "Programming", items: ["JavaScript", "Python", "C#", "SQL"] },
-    { category: "Frameworks", items: ["React", "Next.js", "Express", "Django"] },
-    { category: "Tools", items: ["Git", "Docker", "Postman", "AWS"] },
-    { category: "Soft Skills", items: ["Problem Solving", "Teamwork", "Leadership", "Communication"] },
+    { category: "Programming", items: ["JavaScript", "Python", "C#"] },
+    { category: "Frameworks", items: ["React", "Next.js", "Express"] },
+    { category: "Tools", items: ["Git", "Docker", "Postman"] },
+    { category: "Soft Skills", items: ["Problem Solving", "Teamwork", "Communication"] },
   ];
 
   return (

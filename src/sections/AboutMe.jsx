@@ -9,16 +9,14 @@ export default function AboutMe({ onClose }) {
   const beyondRef = useRef(null);
 
   const skills = [
-    { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Redis'] },
+    { category: 'Frontend', items: ['React', 'Next.js', 'JavaScript', 'Tailwind CSS' ,'HTML'] },
+    { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'SQL Server', 'C#'] },
     { category: 'Tools & APIs', items: ['REST APIs', 'GraphQL', 'Git', 'Docker', 'AWS'] },
-    { category: 'Practices', items: ['Agile', 'CI/CD', 'Testing', 'Code Review', 'Documentation'] }
+    { category: 'Practices', items: ['Agile', 'CI/CD', 'Testing', 'Code Review'] }
   ];
 
   const experience = [
-    { year: '2023-Present', role: 'Senior Full-Stack Developer', company: 'Tech Corp' },
-    { year: '2021-2023', role: 'Full-Stack Developer', company: 'StartupXYZ' },
-    { year: '2020-2021', role: 'Frontend Developer', company: 'WebAgency' }
+    { year: '2025', role: 'Software Developer Intern', company: 'SentientGeeks' }
   ];
 
   useEffect(() => {
@@ -113,7 +111,9 @@ export default function AboutMe({ onClose }) {
         try {
           target.removeEventListener('mouseenter', enter);
           target.removeEventListener('mouseleave', leave);
-        } catch (e) {}
+        } catch (e) {
+          console.warn('Failed to remove hover listener', e);
+        }
       });
       // revert all GSAP-created styles/animations
       ctx.revert();
@@ -175,9 +175,11 @@ export default function AboutMe({ onClose }) {
               rel="noopener noreferrer"
               className="contact-link flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-white"
             >
-              <Github size={20} />
-              <span>GitHub</span>
-              <ExternalLink size={16} />
+              <Github size={20}
+              color='#58A1FF'
+              />
+              <span className='text-[#58A1FF]'>GitHub</span>
+              <ExternalLink size={16} color='#58A1FF' />
             </a>
             <a
               href="https://www.linkedin.com/in/sudipto-saha-je"
@@ -185,16 +187,16 @@ export default function AboutMe({ onClose }) {
               rel="noopener noreferrer"
               className="contact-link flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-white"
             >
-              <Linkedin size={20} />
-              <span>LinkedIn</span>
-              <ExternalLink size={16} />
+              <Linkedin size={20} color='#58A1FF'/>
+              <span className='text-[#58A1FF]'>LinkedIn</span>
+              <ExternalLink size={16} color='#58A1FF'/>
             </a>
             <a
               href="mailto:your.email@example.com"
               className="contact-link flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-white"
             >
-              <Mail size={20} />
-              <span>Email</span>
+              <Mail size={20} color='#58A1FF' />
+              <span className='text-[#58A1FF]'>Email</span>
             </a>
           </div>
 
@@ -229,7 +231,7 @@ export default function AboutMe({ onClose }) {
                   className="p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 card hover-card"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-blue-300">{skill.category}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-blue-400">{skill.category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {skill.items.map((item) => (
                       <span
@@ -258,7 +260,9 @@ export default function AboutMe({ onClose }) {
                   className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:translate-x-2 card hover-card"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
-                  <div className="text-blue-400 font-semibold sm:min-w-[120px]">{exp.year}</div>
+                  <div className="text-blue-400 font-semibold pt-[17px]">{exp.year}</div>
+                  <div className='flex items-center justify-center w-[60px] h-[60px] rounded-full overflow-hidden bg-white/20'><img src='https://media.licdn.com/dms/image/v2/D560BAQEN75k8G9REJA/company-logo_200_200/company-logo_200_200/0/1704888959472/sentientgeeks_logo?e=2147483647&v=beta&t=KMqqBN_aUaPhEezkPKjLnLETsnhNS7EVzEyzLL25PZw'
+                  alt='SentientGeeks Logo'/></div>
                   <div>
                     <h3 className="text-xl font-semibold mb-1 text-white">{exp.role}</h3>
                     <p className="text-gray-300">{exp.company}</p>
@@ -279,13 +283,13 @@ export default function AboutMe({ onClose }) {
                 Click the button below to view my CV online. You can also download it from the opened page.
               </p>
               <a
-                href="/images/SUDIPTO SAHA 2025 CV.pdf"
+                href="/images/SUDIPTO CV 2025 UP.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-white"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:scale-105 text-amber-50"
               >
-                View / Download CV
-                <ExternalLink size={16} />
+                <span className='text-white'>View / Download CV</span>
+                <ExternalLink size={16} color='#ffffff' />
               </a>
             </div>
           </section>
@@ -298,19 +302,19 @@ export default function AboutMe({ onClose }) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 card hover-card">
-                <h3 className="text-xl font-semibold mb-3 text-purple-300">Open Source</h3>
-                <p className="text-gray-100">
-                  Active contributor to several open-source projects. I believe in giving back to
-                  the community that has helped me grow as a developer.
-                </p>
-              </div>
-              <div className="p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 card hover-card">
                 <h3 className="text-xl font-semibold mb-3 text-purple-300">Continuous Learning</h3>
                 <p className="text-gray-100">
                   Constantly exploring emerging technologies, attending tech conferences, and
                   participating in hackathons to stay at the cutting edge of web development.
                 </p>
               </div>
+              <div className="p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 card hover-card">
+                <h3 className="text-xl font-semibold mb-3 text-purple-300">Sports Enthuasist</h3>
+                <p className="text-gray-100">
+                  Actively follow sports like football and cricket and like to play too to ke myself fit and active all day.
+                </p>
+              </div>
+              
             </div>
           </section>
         </div>

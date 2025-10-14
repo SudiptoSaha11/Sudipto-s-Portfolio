@@ -16,8 +16,8 @@ export default function Projects({ onClose }) {
       description: "A scalable food delivery platform with real-time order tracking, restaurant management and many more",
       tech: ["React", "JavaScript", "MongoDB", "Socket.io", "Tailwind"],
       image: "images/food express.jpg",
-      github: "https://github.com/yourusername/project2",
-      live: "https://project2.com",
+      github: "https://github.com/SudiptoSaha11/FoodExpress-FrontEnd",
+      live: "#",
       featured: true
     },
     {

@@ -12,7 +12,7 @@ export default function Projects({ onClose }) {
       featured: true
     },
     {
-      title: "Food Delivery App",
+      title: "Food Express",
       description: "A scalable food delivery platform with real-time order tracking, restaurant management and many more",
       tech: ["React", "JavaScript", "MongoDB", "Socket.io", "Tailwind"],
       image: "images/food express.jpg",
@@ -21,32 +21,32 @@ export default function Projects({ onClose }) {
       featured: true
     },
     {
-      title: "Social Media Dashboard",
+      title: "Social Media Platform",
       description: "Analytics platform for tracking social media metrics across multiple platforms.",
       tech: ["React", "Express", "Redis", "Chart.js", "REST APIs"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      github: "https://github.com/yourusername/project3",
-      live: "https://project3.com",
+      github: "#",
+      live: "https://facebook.com",
       featured: false
     },
     {
       title: "Weather Forecast App",
       description: "Real-time weather application with location-based forecasts and interactive maps.",
-      tech: ["Javascript", "OpenWeather API", "HTML", "CSS"],
+      tech: ["JavaScript", "OpenWeather API", "GSap", "CSS"],
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
       github: "https://github.com/SudiptoSaha11/Weather-Forecast",
       live: "https://ifweather.netlify.app",
       featured: false
-    }
-    // {
-    //   title: "Portfolio CMS",
-    //   description: "Content management system specifically designed for creative professionals and portfolios.",
-    //   tech: ["Next.js", "Sanity.io", "Vercel", "Framer Motion"],
-    //   image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-    //   github: "https://github.com/yourusername/project5",
-    //   live: "https://project5.com",
-    //   featured: false
-    // },
+    },
+    {
+      title: "TaskFlow",
+      description: "A productive task managenement web app to organize your daily tasks and boost your productivity. Looks better in phones.",
+      tech: ["JavaScript", "React", "Node", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+      github: "#",
+      live: "https://taskflowflix.netlify.app/",
+      featured: false
+    },
     // {
     //   title: "Fitness Tracker",
     //   description: "Mobile-first fitness tracking app with workout plans, nutrition logging, and progress charts.",

@@ -141,7 +141,7 @@ export default function AboutMe({ onClose }) {
     <div className="min-h-screen relative overflow-auto" ref={containerRef}>
       {/* Background Image with Overlay */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-20"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')",
         }}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import HeroGrid from './Hero';
+import { useNavigate } from 'react-router-dom';
 
 export default function PortfolioLoader() {
   const [loading, setLoading] = useState(true);
@@ -13,6 +14,7 @@ export default function PortfolioLoader() {
   const barRef = useRef(null);
   const heroContainerRef = useRef(null);
   const videoContainerRef = useRef(null);
+  const navigate = useNavigate();
 
   const texts = [
     "Welcome to my Portfolio",
@@ -58,15 +60,15 @@ export default function PortfolioLoader() {
         onComplete: () => {
           setLoading(false);
           setShowHero(true);
-          
+
           // After overlay fades, animate the transition
           setTimeout(() => {
             // Fade in HeroGrid
-            gsap.fromTo(heroContainerRef.current, 
-              { opacity: 0 }, 
+            gsap.fromTo(heroContainerRef.current,
+              { opacity: 0 },
               { opacity: 1, duration: 1.2, ease: 'power2.inOut' }
             );
-            
+
             // Simultaneously fade out video
             gsap.to(videoContainerRef.current, {
               opacity: 0,
@@ -76,6 +78,7 @@ export default function PortfolioLoader() {
                 // Optionally pause video to save resources
                 if (videoRef.current) {
                   videoRef.current.pause();
+                  // navigate("/hero");
                 }
               }
             });
@@ -113,7 +116,7 @@ export default function PortfolioLoader() {
   return (
     <div className="relative w-full h-screen overflow-hidden ">
       {/* Background Video Layer - Always present */}
-      <div 
+      <div
         ref={videoContainerRef}
         className="fixed inset-0 z-40"
         style={{ pointerEvents: showHero ? 'none' : 'auto' }}
@@ -121,17 +124,31 @@ export default function PortfolioLoader() {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          src="images/Farhan.mp4"
+          src="https://7xdu60n3w6.ucarecd.net/89f8426d-790f-43f7-a335-0fd42702ac2a/" // ✅ corrected domain (not ucarecd.net)
           autoPlay
           playsInline
-          loop={false}
           muted={false}
+          loop={false}
+          onEnded={() => {
+            gsap.to(videoRef.current, {
+              opacity: 0,
+              duration: 1,
+              ease: "power2.inOut",
+              onComplete: () => navigate("/hero"),
+            });
+          }}
+          onError={() => console.error("Video failed to load.")}
+          onCanPlayThrough={() => {
+            console.log("Video ready to play");
+            videoRef.current.play();
+          }}
           style={{
-            opacity: 0,
-            filter: 'brightness(0.55) contrast(1.05) saturate(0.9)',
-            transform: 'scale(1.03)',
+            filter: "brightness(0.55) contrast(1.05) saturate(0.9)",
+            transform: "scale(1.03)",
           }}
         />
+
+
       </div>
 
       {/* Overlay & Text Layer */}
@@ -214,17 +231,6 @@ export default function PortfolioLoader() {
               }} />
             </div>
           )}
-        </div>
-      )}
-
-      {/* HeroGrid Layer */}
-      {showHero && (
-        <div 
-          ref={heroContainerRef}
-          className="fixed inset-0 z-50"
-          style={{ opacity: 0 }}
-        >
-          <HeroGrid />
         </div>
       )}
     </div>

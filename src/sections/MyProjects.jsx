@@ -65,7 +65,7 @@ export default function Projects({ onClose }) {
     <div className="min-h-screen relative overflow-auto">
       {/* Background Image with Overlay */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-0"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&h=900&fit=crop')",
         }}

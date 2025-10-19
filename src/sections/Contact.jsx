@@ -65,7 +65,7 @@ export default function Contact({ onClose }) {
     <div className="min-h-screen relative overflow-auto">
       {/* Background */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80')",
@@ -104,7 +104,7 @@ export default function Contact({ onClose }) {
               href="https://github.com/SudiptoSaha11"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 hover:text-green-300 transition"
+              className="flex items-center gap-3 hover:text-green-300 transition "
             >
               <Github />SudiptoSaha11
             </a>

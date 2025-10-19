@@ -5,6 +5,7 @@ import Projects from "./sections/MyProjects";
 import SkillsEducation from "./sections/SkillsandEducation";
 import Home from "./sections/Home";
 import GetStarted from "./sections/GetStarted";
+import Contact from "./sections/Contact";
 
 function App() {
   return (
@@ -24,7 +25,10 @@ function App() {
         <Route path="/projects" element={<Projects />} />
 
         {/* Skills and education page */}
-        <Route path="/skillsedu" element={<SkillsEducation />} />
+        <Route path="/skills" element={<SkillsEducation />} />
+
+        <Route path="/contact" element={<Contact />} />
+
       </Routes>
     </Router>
   );

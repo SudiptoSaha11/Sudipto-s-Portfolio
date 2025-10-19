@@ -18,10 +18,10 @@ export default function SkillsEducation({ onClose }) {
     <div className="min-h-screen relative overflow-auto">
       {/* Background Image with Overlay */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-0"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80')",
+            "url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80')",
         }}
       />
       <div className="fixed inset-0 bg-black/50 -z-10" />

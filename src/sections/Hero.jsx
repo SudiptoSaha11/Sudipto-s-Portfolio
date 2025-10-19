@@ -25,7 +25,7 @@ export default function HeroGrid() {
       title: "Skills & Education",
       subtitle: "My expertise",
       bg: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80",
-      route: "/skills",
+      route: "/skill",
     },
     {
       id: 4,

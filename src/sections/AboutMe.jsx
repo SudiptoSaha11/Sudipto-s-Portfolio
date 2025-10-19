@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Code2, Database, Globe, Zap, Github, Linkedin, Mail, ExternalLink, X } from 'lucide-react';
 import { gsap } from 'gsap';
+import { useNavigate } from "react-router-dom";
 
 export default function AboutMe({ onClose }) {
   const containerRef = useRef(null);
@@ -18,6 +19,8 @@ export default function AboutMe({ onClose }) {
   const experience = [
     { year: '2025', role: 'Software Developer Intern', company: 'SentientGeeks' }
   ];
+
+    const navigate = useNavigate();
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -160,7 +163,7 @@ export default function AboutMe({ onClose }) {
               <p className="text-xl text-white">Full-Stack Web Developer</p>
             </div>
             <button
-              onClick={onClose}
+              onClick={()=>{navigate('/hero')}}
               className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-[#FF0000] transition-all duration-300 border border-white/30 flex items-center gap-2 text-white"
             >
               <X size={20} />

@@ -1,13 +1,14 @@
 import { Mail, Github, Linkedin, Send, X } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
 
 const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const replyTemplateID = import.meta.env.VITE_EMAILJS_REPLY_TEMPLATE_ID;
 
-export default function Contact({ onClose }) {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +16,7 @@ export default function Contact({ onClose }) {
   });
 
   const [status, setStatus] = useState("");
+    const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -85,7 +87,7 @@ export default function Contact({ onClose }) {
               <p className="text-xl text-white">Let’s connect and work together</p>
             </div>
             <button
-              onClick={onClose}
+              onClick={()=>{navigate('/hero')}}
               className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-[#FF0000] transition-all duration-300 border border-white/30 flex items-center gap-2 text-white"
             >
               <X size={20} />

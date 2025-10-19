@@ -1,6 +1,7 @@
 import { GraduationCap, BookOpen, Award, Zap, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-export default function SkillsEducation({ onClose }) {
+export default function SkillsEducation() {
   const education = [
     { year: "2023-2025", degree: "Masters in Computer Application", institution: "Guru Nanak Institite Of Technology" },
     { year: "2019 - 2023", degree: "B.Tech in Electrical Engineering", institution: "Narula Institiute Of Technology" },
@@ -13,6 +14,8 @@ export default function SkillsEducation({ onClose }) {
     { category: "Tools", items: ["Git", "Docker", "Postman"] },
     { category: "Soft Skills", items: ["Problem Solving", "Teamwork", "Communication"] },
   ];
+
+    const navigate = useNavigate();
 
   return (
     <div className="min-h-screen relative overflow-auto">
@@ -38,7 +41,7 @@ export default function SkillsEducation({ onClose }) {
               <p className="text-xl text-white">My learning journey & expertise</p>
             </div>
             <button
-              onClick={onClose}
+              onClick={()=>{navigate('/hero')}}
               className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-[#FF0000] transition-all duration-300 border border-white/30 flex items-center gap-2 text-white"
             >
               <X size={20} />

@@ -1,6 +1,8 @@
 import { Code2, ExternalLink, Github, X, Layers, Sparkles, Rocket } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-export default function Projects({ onClose }) {
+export default function Projects() {
+    const navigate = useNavigate();
   const projects = [
     {
       title: "TicketFlix",
@@ -86,7 +88,7 @@ export default function Projects({ onClose }) {
               </p>
             </div>
             <button
-              onClick={onClose}
+              onClick={()=>{navigate('/hero')}}
               className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-[#FF0000] transition-all duration-300 border border-white/30 flex items-center gap-2 text-white"
             >
               <X size={20} />

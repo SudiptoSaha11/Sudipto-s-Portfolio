@@ -124,7 +124,7 @@ export default function PortfolioLoader() {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          src="https://7xdu60n3w6.ucarecd.net/89f8426d-790f-43f7-a335-0fd42702ac2a/" // ✅ corrected domain (not ucarecd.net)
+          src="images/Farhan.mp4" // ✅ corrected domain (not ucarecd.net)
           autoPlay
           playsInline
           muted={false}

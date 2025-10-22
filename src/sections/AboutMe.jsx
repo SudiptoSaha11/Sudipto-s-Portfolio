@@ -164,7 +164,7 @@ export default function AboutMe({ onClose }) {
             </div>
             <button
               onClick={()=>{navigate('/hero')}}
-              className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-[#FF0000] transition-all duration-300 border border-white/30 flex items-center gap-2 text-white"
+              className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg hover:bg-[#FF0000] transition-all duration-300 border border-white/30 flex items-center gap-2 text-white cursor-pointer"
             >
               <X size={20} />
             </button>

@@ -37,7 +37,7 @@ export default function HeroGrid() {
   ];
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-black">
+    <div className="fixed inset-0 w-full h-full bg-black ">
       <motion.div
         key="grid"
         initial={{ opacity: 0 }}
@@ -51,18 +51,18 @@ export default function HeroGrid() {
             key={tile.id}
             onClick={() => navigate(tile.route)} // ✅ Redirects to route
             layoutId={`tile-${tile.id}`}
-            className="relative w-full h-full flex items-center justify-center overflow-hidden"
+            className="relative w-full h-full flex items-center justify-center overflow-hidden cursor-pointer"
           >
             <div
               className="absolute inset-0 bg-center bg-cover opacity-40"
               style={{ backgroundImage: `url('${tile.bg}')` }}
             />
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-md" />
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-md cursor-pointer" />
             <div className="relative z-10 text-center px-4">
-              <h3 className="text-3xl sm:text-4xl font-semibold text-white drop-shadow-lg">
+              <h3 className="text-3xl sm:text-4xl font-semibold text-white drop-shadow-lg cursor-pointer">
                 {tile.title}
               </h3>
-              <p className="text-base sm:text-lg text-white/90 mt-2 drop-shadow-md">
+              <p className="text-base sm:text-lg text-white/90 mt-2 drop-shadow-md cursor-pointer">
                 {tile.subtitle}
               </p>
             </div>

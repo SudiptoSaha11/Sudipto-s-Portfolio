@@ -64,16 +64,16 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-auto">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Background */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0 opacity-40"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80')",
+            "url('https://images.unsplash.com/photo-1560462931-6a0747e1c340?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA0fHxjb250YWN0JTIwdXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600')",
         }}
       />
-      <div className="fixed inset-0 bg-black/60 -z-10" />
+      <div className="fixed inset-0 bg-black/20 -z-0" />
 
       {/* Glass container */}
       <div className="max-w-4xl mx-auto p-6 md:p-10">

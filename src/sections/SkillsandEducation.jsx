@@ -24,14 +24,14 @@ export default function SkillsEducation() {
         className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-0"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80')",
+            "url('https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGFyayUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600')",
         }}
       />
       <div className="fixed inset-0 bg-black/50 -z-10" />
 
       {/* Glassmorphed Container */}
       <div className="max-w-6xl mx-auto p-6 md:p-10">
-        <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl p-8 md:p-12">
+        <div className="bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl p-8 md:p-12">
           {/* Header */}
           <div className="flex justify-between items-start mb-12">
             <div className="animate-slide-in-left">

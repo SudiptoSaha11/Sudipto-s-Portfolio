@@ -7,7 +7,8 @@ export default function PortfolioLoader() {
   const [loading, setLoading] = useState(true);
   const [showHero, setShowHero] = useState(false);
   const [currentText, setCurrentText] = useState(0);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   const overlayRef = useRef(null);
   const videoRef = useRef(null);
@@ -29,21 +30,10 @@ export default function PortfolioLoader() {
   const delayPerText = Math.floor((VIDEO_DURATION - TEXT_BUFFER) / (texts.length - 1));
 
   useEffect(() => {
+    if (!isVideoReady) return;
+
     // Fade in overlay
     gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8 });
-
-    // Setup video
-    if (videoRef.current) {
-      videoRef.current.muted = false;
-      videoRef.current.play().catch((err) => {
-        console.warn("Autoplay with sound blocked, falling back to muted:", err);
-        videoRef.current.muted = true;
-        setIsMuted(true);
-        videoRef.current.play();
-      });
-
-      gsap.fromTo(videoRef.current, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: 'power2.out' });
-    }
 
     // Text transition logic
     const textInterval = setInterval(() => {
@@ -69,17 +59,14 @@ export default function PortfolioLoader() {
               { opacity: 1, duration: 1.2, ease: 'power2.inOut' }
             );
 
-            // Simultaneously fade out video
+            // Simultaneously fade out video container
             gsap.to(videoContainerRef.current, {
               opacity: 0,
               duration: 1.2,
               ease: 'power2.inOut',
               onComplete: () => {
-                // Optionally pause video to save resources
-                if (videoRef.current) {
-                  videoRef.current.pause();
-                  // navigate("/hero");
-                }
+                // Navigate to /hero as the final step of the timer if video hasn't ended yet
+                navigate("/hero");
               }
             });
           }, 100);
@@ -90,8 +77,16 @@ export default function PortfolioLoader() {
     return () => {
       clearInterval(textInterval);
       clearTimeout(loadingTimer);
-      gsap.globalTimeline.clear();
     };
+  }, [isVideoReady]);
+
+  // Initial video setup
+  useEffect(() => {
+    if (videoRef.current) {
+      // Force initial state
+      videoRef.current.muted = isMuted;
+      gsap.fromTo(videoRef.current, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: 'power2.out' });
+    }
   }, []);
 
   useEffect(() => {
@@ -124,10 +119,12 @@ export default function PortfolioLoader() {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          src="images/Farhan.mp4" // ✅ corrected domain (not ucarecd.net)
+          src="images/Farhan.mp4"
+          poster="images/portfolio png sud.png" // Temporary poster for visual stability
           autoPlay
           playsInline
-          muted={false}
+          muted={isMuted}
+          preload="auto"
           loop={false}
           onEnded={() => {
             gsap.to(videoRef.current, {
@@ -137,14 +134,20 @@ export default function PortfolioLoader() {
               onComplete: () => navigate("/hero"),
             });
           }}
-          onError={() => console.error("Video failed to load.")}
+          onError={(e) => {
+            console.error("Video failed to load.", e);
+            setIsVideoReady(true); // Fallback to allow navigation
+          }}
           onCanPlayThrough={() => {
-            console.log("Video ready to play");
-            videoRef.current.play();
+            console.log("Video ready to play through");
+            setIsVideoReady(true);
+            videoRef.current.play().catch(console.error);
           }}
           style={{
             filter: "brightness(0.55) contrast(1.05) saturate(0.9)",
             transform: "scale(1.03)",
+            opacity: isVideoReady ? 1 : 0.6, // Dim until ready
+            transition: 'opacity 1s ease-in-out'
           }}
         />
 
